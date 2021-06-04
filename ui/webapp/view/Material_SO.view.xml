@@ -1,0 +1,114 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:ui="sap.ui.table"
+    xmlns:f="sap.f"
+    controllerName="sap.m.IOM.controller.Material_SO"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+
+    displayBlock="true">
+    <Panel height="auto">
+        <content>
+            <VBox>
+                <Title class="h4"
+                    text="Sales Orders"
+                    titleStyle="H4" />
+
+<!--                 <SearchField width="20%"
+                    showSearchButton="true"/> -->
+
+                <ui:Table id="MATERIAL_SO_VIEW"
+                    selectionMode="None"
+                    paste="onPaste"
+                    visibleRowCountMode="Auto"
+                    ariaLabelledBy="title">
+                    <!-- <ui:extension>
+                    <OverflowToolbar>
+                        <Title id="title" text="Sales Orders"/>
+                        <ToolbarSpacer/>
+                    </OverflowToolbar>
+                </ui:extension> -->
+                    <ui:columns>
+
+                        <ui:Column sortProperty="REQ_DEL_DATE" width="12em">
+                            <Label text="Requested Delivery Date" />
+                            <ui:template>
+                                <Text text="{REQ_DEL_DATE}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+
+                        <ui:Column sortProperty="(SD_NO_ITEM)">
+                            <Label text="SO Number" />
+                            <ui:template>
+                                <Text text="{(SD_NO_ITEM)}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column sortProperty="CREATED_BY">
+                            <Label text="Created By" />
+                            <ui:template>
+                                <Text text="{CREATED_BY}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column sortProperty="CMIR"
+                            width="15rem">
+                            <Label text="CMIR" />
+                            <ui:template>
+                                <Text text="{CMIR}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column sortProperty="SOLD_TO_PARTY">
+                            <Label text="Sold to Party" />
+                            <ui:template>
+                                <Text text="{SOLD_TO_PARTY}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column sortProperty="REQD_QTY">
+                            <Label text="Required Quantity" />
+                            <ui:template>
+                                <Text text="{REQD_QTY}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <!-- <ui:Column sortProperty="flag"
+                            width="15rem">
+                            <Label text="Flagged"/>
+                            <ui:template>
+                                <MultiComboBox
+                                    id="FlaggedComboBox"
+                                    selectionChange="onSelectionChange"
+                                    selectionFinish="onSelectionFinish"
+                                    items="{
+                                        path: '/modelData',
+                                        sorter: { path: 'FLAG_NAME' },
+                                        templateShareable:false
+                                    }">
+			                        <core:Item key="{KEY}" text="{FLAG_NAME}"/>
+                                </MultiComboBox>
+                            </ui:template>
+                        </ui:Column>
+
+                        <ui:Column sortProperty="COMMENT_TEXT">
+                            <Label text="Latest Notes" />
+                            <ui:template>
+                                <VBox>
+                                <Text text="{COMMENT_TEXT}" />
+
+                                <Link text= "...more" press=".onDefaultDialogPress" app:sd_no_item="{(SD_NO_ITEM)}" visible="{= ${COMMENT_TEXT} !== null}" />
+                                <Link text="Add SO Comments"
+                                     press=".onDefaultDialogPress" app:sd_no_item="{(SD_NO_ITEM)}" visible="{= ${COMMENT_TEXT} === null}" />
+                                </VBox>
+                            </ui:template>
+                        </ui:Column> -->
+
+                    </ui:columns>
+                </ui:Table>
+            </VBox>
+        </content>
+    </Panel>
+</mvc:View>

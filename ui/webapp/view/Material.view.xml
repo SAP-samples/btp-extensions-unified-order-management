@@ -1,0 +1,90 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    controllerName="sap.m.IOM.controller.Material"
+    displayBlock="true">
+    <Page enableScrolling="false">
+        <customHeader>
+            <core:Fragment fragmentName="sap.m.IOM.fragmentview.navbar"
+                type="XML" />
+        </customHeader>
+        <content>
+            <HBox backgroundDesign="Solid" class="padLeft">
+
+                <SearchField id="materialId" class="searchBox" 
+                    placeholder="Enter Material Number"
+                    change="onChangeSearch"/>
+                <SearchField id="plantId" class="searchBox"
+                    placeholder="Enter Plant"
+                    change="onChangeSearch"/>
+
+            </HBox>
+            <f:DynamicPage id="MaterialView">
+                <f:title>
+                    <f:DynamicPageTitle class="padLeft">
+                        <f:heading>
+
+                            <Title text="{MAT_NO} - {MAT_DESC}"/>
+                        </f:heading>
+                        <f:expandedContent>
+                            <ObjectAttribute title="Plant"
+                                text="{PLANT}"/>
+                        </f:expandedContent>
+                        <f:snappedContent>
+                            <ObjectAttribute title="Plant"
+                                text="{PLANT}"/>
+                        </f:snappedContent>
+                        <f:navigationActions>
+<!--                             <Button text="Back"
+                                press="onNavBack">
+                            </Button> -->
+                        </f:navigationActions>
+
+                    </f:DynamicPageTitle>
+                </f:title>
+                <f:header>
+                    <f:DynamicPageHeader pinnable="true" class="padLeft">
+
+                        <l:HorizontalLayout allowWrapping="true">
+
+                            <l:VerticalLayout class="sapUiMediumMarginEnd">
+                                <ObjectAttribute title="Purchasing Group"
+                                    text="{PURCH_GROUP}"/>
+                                <ObjectAttribute title="Unit"
+                                    text="{UNIT}"/>
+                            </l:VerticalLayout>
+
+                            <l:VerticalLayout class="sapUiMediumMarginEnd">
+                                <ObjectAttribute title="Planned Delivery Time"
+                                    text="{PLANNED_DELIVERY_TIME}"/>
+                                <ObjectAttribute title="GR Processing Time"
+                                    text="{GR_PROCESSING_TIME}"/>
+                            </l:VerticalLayout>
+
+                            <l:VerticalLayout class="sapUiMediumMarginEnd">
+                                <ObjectAttribute title="Plant Stock Availability"
+                                    text="{AVAILABLE_STOCK}"/>
+                                <ObjectAttribute title="Procurement Type"
+                                    text="{PROCUREMENT_TYPE}"/>
+                            </l:VerticalLayout>
+
+                        </l:HorizontalLayout>
+                    </f:DynamicPageHeader>
+                </f:header>
+                <f:content>
+                    <VBox width="100%">
+                        <mvc:XMLView viewName="sap.m.IOM.view.Material_Detail" />
+                        <mvc:XMLView viewName="sap.m.IOM.view.Material_PO" />
+                        <mvc:XMLView viewName="sap.m.IOM.view.Material_SO" />
+                        <!-- <mvc:XMLView viewName="sap.m.IOM.view.Material_Comments" /> -->
+                    </VBox>
+                </f:content>
+            </f:DynamicPage>
+
+        </content>
+    </Page>
+</mvc:View>

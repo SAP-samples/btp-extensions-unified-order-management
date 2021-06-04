@@ -1,0 +1,16 @@
+{
+  "name": "IOM-server",
+  "author": "SCE",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cfenv": "^1.2.4",
+    "express": "^4.17.1",
+    "hdb": "^0.18.3",
+    "request": "^2.88.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

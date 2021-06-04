@@ -1,0 +1,116 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "IOM",
+		"type": "application",
+		"i18n": "/i18n/i18n.properties",
+		"title": "{{APP_TITLE}}",
+		"description": "{{APP_DESCRIPTION}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"materials": {
+				"uri": "model/materials.json",
+				"type": "JSON",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "sap.m.IOM.model.materials.json",
+					"annotations": []
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_belize"],
+		"fullWidth": false
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "sap.m.IOM.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": { 
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.m.IOM.i18n.i18n"
+				}
+			},
+			"materials": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "materials"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "sap.m.IOM.view",
+				"controlId": "app",
+				"viewType": "XML",
+				"controlAggregation": "pages",
+				"async": true,
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [{
+				"name": "Csr",
+				"pattern": ["", "csr"],
+				"target": "Csr"
+			}, {
+				"name": "Buyer",
+				"pattern": "buyer",
+				"target": "Buyer"
+			}, {
+				"name": "Material",
+				"pattern": "material/{materialId}",
+				"target": "Material"
+			}
+			],
+			"targets": {
+				"Csr": {
+					"viewName": "Csr",
+					"viewLevel": "1"
+				},
+				"Buyer": {
+					"viewName": "Buyer",
+					"viewLevel": "1"
+				},
+				"Material": {
+					"viewName": "Material",
+					"viewLevel": "1"
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"transition": "show",
+					"viewLevel" : "1"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	}
+}

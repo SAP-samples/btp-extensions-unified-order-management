@@ -1,0 +1,41 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    controllerName="sap.m.IOM.controller.Material_Comments" 
+    displayBlock="true">
+    <Panel>
+		<content>
+            <VBox class="padBottom">
+                <Title class="h4" text="Material Level Comments" titleStyle="H4"/>
+                <HBox class="escalation-button">
+                    <Text text="Material Escalation Status"/>
+                    <Switch id="EscStatusButton" customTextOn=" " customTextOff=" " change="onEscalationStatusChange"/>
+                </HBox>
+            </VBox>
+            
+            <FeedInput
+                showIcon="false" 
+                placeholder="Please use this thread for escalation and other generic notes about material/vendor." 
+                post="onCommentPost"/>
+            <List
+                class="comments"
+                items="{/modelData}"
+                id="CommentsFeed" 
+                growing="true"
+                growingThreshold="5">
+                <FeedListItem
+                    sender="{AUTHOR}"
+                    senderPress="onPress"
+                    showIcon="false"
+                    iconDensityAware="false"
+                    info="{Type}"
+                    timestamp="{CREATED_DATE}"
+                    text="{COMMENT_TEXT}"
+                    convertLinksToAnchorTags="All">
+                    <FeedListItemAction text="" icon="{Icon}" key="{Key}" press="onActionPressed" />
+                </FeedListItem>
+            </List>
+        </content>
+    </Panel>
+</mvc:View>

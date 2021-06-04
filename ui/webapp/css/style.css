@@ -1,0 +1,36 @@
+.h4 {
+    padding-bottom: 10px
+}
+.escalation-button {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.po_items {
+	display: flex;
+	align-self: flex-end;
+	align-items: flex-start;
+	width: 8cm;
+	background-color: blue;
+}
+
+.padBottom {
+    padding-bottom: 10px;
+}
+
+.padLeft {
+    padding-left: 5rem !important;
+}
+
+.searchBox {
+    padding: 0.5rem 2rem 0rem 0rem;
+}
+
+.sapFDynamicPageHeaderContent{
+    padding-bottom: 1rem ;
+}
+
+.comments {
+    padding-bottom: 50px;
+}

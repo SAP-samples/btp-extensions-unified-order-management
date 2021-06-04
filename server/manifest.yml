@@ -1,0 +1,7 @@
+---
+applications:
+- name: iom-server
+  memory: 128M
+  disk_quota: 128M
+  buildpack: nodejs_buildpack
+  command: npm start

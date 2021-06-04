@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core">
+
+
+	<!-- <f:ShellBar class="ShellBar" title="{i18n>APP_TITLE}" homeIcon="./img/sap.png" />
+ -->
+
+ 	<f:ShellBar
+ 			class="ShellBar"
+			title="{i18n>APP_TITLE}"
+			showCopilot="false"
+			showSearch="true"
+			showNotifications="true"
+			showProductSwitcher="true"
+			notificationsNumber="2">
+		
+
+
+		<f:menu>
+			<Menu>
+				<MenuItem text="{i18n>CSR_VIEW}" icon="sap-icon://my-sales-order" press="onNavToCsr"/>
+				<MenuItem text="{i18n>BUYER_VIEW}" icon="sap-icon://sales-quote" press="onNavToBuyer"/>
+			</Menu>
+		</f:menu>
+	</f:ShellBar>
+
+</core:FragmentDefinition>

@@ -1,0 +1,108 @@
+{
+	"MaterialCollection": [{
+			"mat_no": "mat1",
+			"so_item": "so1",
+			"delivery_date": "01/17/2020",
+			"desc": "mat1Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat2",
+			"so_item": "so2",
+			"delivery_date": "01/18/2020",
+			"desc": "mat2Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat3",
+			"so_item": "so3",
+			"delivery_date": "01/19/2020",
+			"desc": "mat3Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat4",
+			"so_item": "so4",
+			"delivery_date": "01/17/2020",
+			"desc": "mat4Desc",
+			"flag": "N"
+		},
+		{
+			"mat_no": "mat5",
+			"so_item": "so5",
+			"delivery_date": "01/18/2020",
+			"desc": "mat5Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat6",
+			"so_item": "so6",
+			"delivery_date": "01/19/2020",
+			"desc": "mat6Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat7",
+			"so_item": "so7",
+			"delivery_date": "01/17/2020",
+			"desc": "mat7Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat8",
+			"so_item": "so8",
+			"delivery_date": "01/18/2020",
+			"desc": "mat8Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat9",
+			"so_item": "so49",
+			"delivery_date": "01/19/2020",
+			"desc": "mat9Desc",
+			"flag": "N"
+		},
+		{
+			"mat_no": "mat10",
+			"so_item": "so10",
+			"delivery_date": "01/17/2020",
+			"desc": "mat10Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat11",
+			"so_item": "so11",
+			"delivery_date": "01/18/2020",
+			"desc": "mat11Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat12",
+			"so_item": "so12",
+			"delivery_date": "01/19/2020",
+			"desc": "mat12Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat13",
+			"so_item": "so13",
+			"delivery_date": "01/17/2020",
+			"desc": "mat13Desc",
+			"flag": "N"
+		},
+		{
+			"mat_no": "mat14",
+			"so_item": "so14",
+			"delivery_date": "01/18/2020",
+			"desc": "mat14Desc",
+			"flag": "Y"
+		},
+		{
+			"mat_no": "mat15",
+			"so_item": "so15",
+			"delivery_date": "01/19/2020",
+			"desc": "mat15Desc",
+			"flag": "N"
+		}
+	]
+}

@@ -1,0 +1,233 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:ui="sap.ui.table"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	controllerName="sap.m.IOM.controller.Buyer"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	displayBlock="true">
+	<Page>
+		<customHeader>
+			<core:Fragment fragmentName="sap.m.IOM.fragmentview.navbar"
+				type="XML" />
+			<!-- <f:ShellBar class="ShellBar" title="{i18n>APP_TITLE}" homeIcon="./img/sap.png" /> -->
+		</customHeader>
+		<content>
+			<f:DynamicPage>
+				<f:header>
+					<f:DynamicPageHeader>
+						<f:content>
+							<fb:FilterBar id="buyer-filter-bar"
+								header="{i18n>BUYER_HEADER_TITLE}"
+								reset="onReset"
+								search="onSearch"
+								clear="onClear"
+								cancel="onCancel"
+								filtersDialogClosed = "onFiltersDialogClosed"
+								showRestoreButton="true"
+								showClearButton="true">
+
+								<fb:filterGroupItems>
+									<!-- <fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="E"
+										label="Search"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+											<SearchField showSearchButton="true"/>
+										</fb:control>
+									</fb:FilterGroupItem> -->
+								
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="A"
+										label="Material No"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+                                            <SearchField id="MAT_NO" placeholder="Material No" change="onChangeSearch"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="B"
+										label="Purchase Order No"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+                                            <SearchField id="PD_NO" placeholder="PO No" change="onChangeSearch"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="C"
+										label="Material Description"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+											<SearchField id="MAT_DESC" placeholder="Material Description" change="onChangeSearch"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+								</fb:filterGroupItems>
+
+							</fb:FilterBar>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+
+				<f:content>
+					<ui:Table id="BUYERVIEW"
+						selectionMode="None"
+						paste="onPaste"
+						visibleRowCountMode="Auto"
+						ariaLabelledBy="title">
+						<ui:extension>
+							<OverflowToolbar>
+								<Title id="title"
+									text="{i18n>BUYER_TABLE_TITLE}"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</ui:extension>
+						<ui:columns>
+							<ui:Column
+								sortProperty="MAT_NO"
+								width="8rem">
+								<Label text="Material No." />
+								<ui:template>
+									<Link text="{MAT_NO}" wrapping="false" app:plant="{PLANT}" press="onPress"/>
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="PLANT"
+								width="5rem">
+								<Label text="Plant no." />
+								<ui:template>
+									<Text text="{PLANT}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="PD_NO"
+								width="7rem">
+								<Label text="PO number" />
+								<ui:template>
+									<Text text="{PD_NO}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="MAT_DESC" 
+								width="10rem">
+								<Label text="Material Description" />
+								<ui:template>
+									<Text text="{MAT_DESC}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="CREATED_ON" 
+								hAlign="Center"
+								width="8rem">
+								<Label text="PO Created Date" />
+								<ui:template>
+									<Text text="{CREATED_ON}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="DELIVERY_DATE" 
+								hAlign="Center"
+								width="14rem">
+								<Label text="PO Scheduled Delivery Date" />
+								<ui:template>
+									<Text text="{DELIVERY_DATE}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="SCHEDULE_LINENO" 
+								hAlign="Center"
+								width="8rem">
+								<Label text="Schedule Line" />
+								<ui:template>
+									<Text text="{SCHEDULE_LINENO}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="MAT_STATUS"
+								width="6rem">
+								<Label text="Risk Level" />
+								<ui:template>
+									<Text text="{MAT_STATUS}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<!-- <ui:Column 
+								sortProperty="FLAG_ACK" 
+								hAlign="Center"
+								width="5rem">
+								<Label text="Flagged"/>
+								<ui:template>
+									<Text text="{FLAG_ACK}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column> -->
+							<ui:Column
+								sortProperty="MPI"
+								hAlign="Center"
+								width="5rem">
+								<Label text="MPI" />
+								<ui:template>
+									<Text text="{MPI}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="ABC"
+								hAlign="Center"
+								width="5rem">
+								<Label text="ABC" />
+								<ui:template>
+									<Text text="{ABC}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<!-- <ui:Column
+								sortProperty="ESCALATION_STATUS"
+								width="8rem">
+								<Label text="Escalation Status" />
+								<ui:template>
+									<Text text="{ESCALATION_STATUS}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="COMMENT_TEXT"
+								width="7rem">
+								<Label text="Latest Notes" />
+								<ui:template>
+									<Text text="{COMMENT_TEXT}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column> -->
+							<ui:Column
+								sortProperty="LAST_MODIFIED"
+								width="8rem">
+								<Label text="Last changed on" />
+								<ui:template>
+									<Text text="{LAST_MODIFIED}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+						</ui:columns>
+					</ui:Table>
+				</f:content>
+			</f:DynamicPage>
+		</content>
+	</Page>
+</mvc:View>

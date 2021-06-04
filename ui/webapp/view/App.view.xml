@@ -1,0 +1,10 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:ui="sap.ui.table"
+    xmlns:f="sap.f"
+    controllerName="sap.m.IOM.controller.App" 
+    displayBlock="true">
+    <App id="app"/>
+</mvc:View>

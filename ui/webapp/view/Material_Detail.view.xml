@@ -1,0 +1,81 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    controllerName="sap.m.IOM.controller.Material_Detail" 
+    displayBlock="true">
+    <Panel>
+		<content>
+            <form:Form id="MaterialDetails"
+                editable="false">
+                <form:layout>
+                    <form:ColumnLayout 
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="4"
+                    />
+                </form:layout>
+                <form:formContainers>
+                    <form:FormContainer>
+                        <form:formElements>
+                            <form:FormElement label="ABC">
+                                <form:fields>
+                                    <Text text="{ABC}"  />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Reorder Point">
+                                <form:fields>
+                                    <Text text="{ROP}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Material Group">
+                                <form:fields>
+                                    <Text text="{MAT_GRP}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="MFG Number">
+                                <form:fields>
+                                    <Text text="{MFG_NO}"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Price per Unit">
+                                <form:fields>
+                                    <Text text="{PPU}"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Safety Stock">
+                                <form:fields>
+                                    <Text text="{SAFETY_STOCK}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Sourcing Category">
+                                <form:fields>
+                                    <Text text="{SOURCING_CAT}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Manufacturer Name">
+                                <form:fields>
+                                    <Text text="{MFG_NAME}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="MRP Controller">
+                                <form:fields>
+                                    <Text text="{MRP_CONTROLLER}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement label="Maximum Stock Level">
+                                <form:fields>
+                                    <Text text="{MAX_STOCK_LEVEL}" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                    </form:FormContainer>
+                </form:formContainers>
+            </form:Form>
+        </content>
+    </Panel>
+</mvc:View>
+

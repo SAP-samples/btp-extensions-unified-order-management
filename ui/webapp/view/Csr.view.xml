@@ -1,0 +1,212 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:ui="sap.ui.table"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	controllerName="sap.m.IOM.controller.Csr"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	displayBlock="true">
+	<Page>
+		<customHeader>
+			<core:Fragment fragmentName="sap.m.IOM.fragmentview.navbar"
+				type="XML" xmlns:html="http://www.w3.org/1999/xhtml"/>
+			<!-- <f:ShellBar class="ShellBar" title="{i18n>APP_TITLE}" homeIcon="./img/sap.png" /> -->
+		</customHeader>
+		<content>
+			<f:DynamicPage>
+				<f:header>
+					<f:DynamicPageHeader>
+						<f:content>
+							<fb:FilterBar id="csr-filter-bar"
+								header="CSR Open Sales Order View"
+								reset="onReset"
+								search="onSearch"
+								clear="onClear"
+								cancel="onCancel"
+								filtersDialogClosed = "onFiltersDialogClosed"
+								showRestoreButton="true"
+								showClearButton="true">
+
+								<fb:filterGroupItems>
+									<!-- <fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="E"
+										label="Search"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+											<SearchField showSearchButton="true"/>
+										</fb:control>
+									</fb:FilterGroupItem> -->
+								
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="A"
+										label="Material No"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+											<SearchField id="MAT_NO" placeholder="Material No" change="onChangeSearch"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="B"
+										label="Sales Order No"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+                                            <SearchField id="SD_NO" placeholder="SO No" change="onChangeSearch"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="C"
+										label="Material Description"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+											<SearchField id="MAT_DESC" placeholder="Material Description" change="onChangeSearch" width="15em"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+									<fb:FilterGroupItem groupName="__$INTERNAL$"
+										name="D"
+										label="Created By"
+										partOfCurrentVariant="true"
+										visibleInFilterBar="true">
+										<fb:control>
+											<SearchField id="CREATED_BY" placeholder="Created By" change="onChangeSearch"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+
+								</fb:filterGroupItems>
+
+							</fb:FilterBar>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+
+				<f:content>
+					<ui:Table id="CSRVIEW"
+						selectionMode="None"
+						paste="onPaste"
+						visibleRowCountMode="Auto"
+						ariaLabelledBy="title">
+						<ui:extension>
+							<OverflowToolbar>
+								<Title id="title"
+									text="{i18n>CSR_TABLE_TITLE}"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</ui:extension>
+						<ui:columns>
+							<ui:Column
+								sortProperty="MAT_NO"
+								width="8rem">
+								<Label text="Material No." />
+								<ui:template>
+									<Link text="{MAT_NO}" wrapping="false" app:plant="{PLANT}" press="onPress"></Link>
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="SD_NO"
+								width="8rem">
+								<Label text="SO no." />
+								<ui:template>
+									<Text text="{SD_NO}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="CREATED_BY"
+								width="8rem">
+								<Label text="Created By" />
+								<ui:template>
+									<Text text="{CREATED_BY}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="MAT_DESC"
+								width="10rem">
+								<Label text="Material Description" />
+								<ui:template>
+									<Text text="{MAT_DESC}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="REQ_DEL_DATE"
+								hAlign="Center"
+								width="12rem">
+								<Label text="Requested Delivery Date" />
+								<ui:template>
+									<Text text="{REQ_DEL_DATE}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="MPI"
+								hAlign="Center"
+								width="5rem">
+								<Label text="MPI" />
+								<ui:template>
+									<Text text="{MPI}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="MAT_STATUS"
+								hAlign="Center"
+								width="8rem">
+								<Label text="Material Status" />
+								<ui:template>
+									<Text text="{MAT_STATUS}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<!-- <ui:Column 
+								sortProperty="flag"
+								hAlign="Center"
+								width="5rem">
+								<Label text="Flagged"/>
+								<ui:template>
+									<Text text="{FLAG_ACK}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="ESCALATION_STATUS"
+								width="8rem">
+								<Label text="Escalation Status" />
+								<ui:template>
+									<Text text="{ESCALATION_STATUS}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+							<ui:Column
+								sortProperty="COMMENT_TEXT">
+								<Label text="Latest Notes" />
+								<ui:template>
+									<Text text="{COMMENT_TEXT}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column> -->
+							<ui:Column
+								sortProperty="LAST_MODIFIED">
+								<Label text="Last changed on" />
+								<ui:template>
+									<Text text="{LAST_MODIFIED}"
+										wrapping="false" />
+								</ui:template>
+							</ui:Column>
+						</ui:columns>
+					</ui:Table>
+				</f:content>
+			</f:DynamicPage>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,109 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:ui="sap.ui.table"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout"
+    controllerName="sap.m.IOM.controller.Material_PO"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    displayBlock="true">
+    <Panel>
+        <content>
+            <VBox>
+                <Title class="h4"
+                    text="Purchase Orders"
+                    titleStyle="H4" />
+                <!-- <HBox class="po_items">
+                    <fb:FilterBar showRestoreButton="false" showGoOnFB="false" showFilterConfiguration="false" useToolbar="false">
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem groupName="__$INTERNAL$" name="A" partOfCurrentVariant="true" visibleInFilterBar="true">
+                                <fb:control>
+                                    <SearchField id="PD_NO_ITEM" change="onChangeSearch"/>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </HBox> -->
+     <!--            <SearchField id="PD_NO_ITEM"
+                    change="onChangeSearch"
+                    width="20%"/> -->
+                <ui:Table id="Material_PO"
+                    selectionMode="None"
+                    paste="onPaste"
+                    visibleRowCountMode="Auto"
+                    ariaLabelledBy="title">
+                    <ui:columns>
+                        <ui:Column sortProperty="CREATED_DATE">
+                            <Label text="PO Creation Date" />
+                            <ui:template>
+                                <Text text="{CREATED_ON}"></Text>
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column sortProperty="DELIVERY_DATE" width="12em">
+                            <Label text="Scheduled Delivery Date" />
+                            <ui:template>
+                                <Text text="{DELIVERY_DATE}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column>
+                            <Label text="Scheduled Line" />
+                            <ui:template>
+                                <Text text="{SCHEDULE_LINENO}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column sortProperty="PD_NO_ITEM">
+                            <Label text="PO Number" />
+                            <ui:template>
+                                <Text text="{(PD_NO_ITEM)}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column>
+                            <Label text="Requested Qty" />
+                            <ui:template>
+                                <Text text="{ORD_QTY}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column>
+                            <Label text="Order Status" />
+                            <ui:template>
+                                <Text text="{STATUS}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column>
+                            <Label text="Tracking Info" />
+                            <ui:template>
+                                <Text text="{TRACKING_NUMBER}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <!-- <ui:Column>
+                            <Label text="Comments"/>
+                            <ui:template>
+                                <VBox>
+                                <Text text = "{COMMENT_TEXT}" />
+                                <Link text="...more"
+                                     press=".onDefaultDialogPress" app:pd_no_item="{(PD_NO_ITEM)}" visible="{= ${COMMENT_TEXT} !== null}" />
+                                <Link text="Add PO Update"
+                                     press=".onDefaultDialogPress" app:pd_no_item="{(PD_NO_ITEM)}" visible="{= ${COMMENT_TEXT} === null}" />
+                                </VBox>
+                            </ui:template>
+                        </ui:Column> -->
+                        <ui:Column>
+                            <Label text="Last updated on" />
+                            <ui:template>
+                                <Text text="{CREATED_DATE}"
+                                    wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                    </ui:columns>
+                </ui:Table>
+            </VBox>
+        </content>
+    </Panel>
+</mvc:View>
