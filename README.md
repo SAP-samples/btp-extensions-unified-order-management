@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-extensions-unified-order-management)](https://api.reuse.software/info/github.com/SAP-samples/btp-extensions-unified-order-management)
+
 # Integrated Order Management Cockpit - BTP Use Case
 
 ## Description
