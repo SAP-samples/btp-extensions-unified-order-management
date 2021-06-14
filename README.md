@@ -15,7 +15,7 @@ Optimize and streamline purchase and sales order management to deal with delayed
 
 ## Solution
 * An integrated order management cockpit that provides end to end visibility into sales and purchase orders with a centralized cockpit where colleagues from procurement, customer service, and application engineering collaborate to handle material delays, escalations, and other issues.
-* The solution is built as an extension to the ECC on the SAP Cloud Platform integrating data from ECC and leveraging SAP Hana Cloud for data modeling and interfacing capabilities.
+* The solution is built as an extension to the ECC on the SAP BTP integrating data from ECC and leveraging SAP Hana Cloud for data modeling and interfacing capabilities.
 
 ## Requirements
 * Hana cloud instantiated on SAP BTP Subaccount (Semantic Models to map data Imported from EDW HANA (side car) , also targets for replicated/federated data in production)
@@ -36,7 +36,7 @@ This example contains no known issues.
 This project is provided "as-is" with no expectation for major changes or support.
 
 [Create an issue](https://github.com/SAP-samples/btp-extensions-unified-order-management/issues) in this repository if you find a bug or have questions about the content.
- 
+
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
 ## License
