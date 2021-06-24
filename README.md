@@ -1,6 +1,6 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-extensions-unified-order-management)](https://api.reuse.software/info/github.com/SAP-samples/btp-extensions-unified-order-management)
 
-# Integrated Order Management Cockpit - BTP Use Case
+# Integrated Order Management Cockpit - SAP BTP Use Case
 
 ## Description
 Optimize and streamline purchase and sales order management to deal with delayed and escalated orders. Consolidate disjointed systems and tools, increase cross-team visibility, and reduce the duplication of work. End-to-end and real-time visibility into sales and purchase orders. Collaboration of procurement, customer service, and subject matter experts to handle material delays, escalations, and other issues.
